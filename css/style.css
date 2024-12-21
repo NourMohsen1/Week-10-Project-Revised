@@ -1,0 +1,328 @@
+<style>
+        /* General styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+        }
+
+    /* Base styles for the navbar */
+    .nav-links {
+     display: flex;
+     gap: 50px;
+      justify-content: center;
+     width: 100%;
+      text-align: center;
+    }
+
+    /* Responsive design */
+        @media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Initially hide nav-links */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute; /* Position relative to the navbar */
+        top: 100%; /* Push below navbar */
+        left: 0;
+        width: 100%; /* Full width */
+        background-color: #222; /* Same color as navbar */
+        padding: 1rem 0; /* Add spacing */
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        color: white; /* Adjust color for visibility */
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav-links when active */
+    }
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #222;
+            padding: 0; /* Remove padding */
+            position: fixed; /* Make it fixed to prevent scrolling with content */
+            top: 0;
+            left: 0;
+            width: 100%; /* Full viewport width */
+            height: 140px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-container img {
+        width: 110px;
+        height: auto;
+        object-fit: cover;
+        margin: 0 1rem; /* Add some margin to avoid touching edges */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Hero section with video background */
+        .hero {
+            position: relative;
+            width: 100%; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden;
+            margin-top: 0; /* Remove any margin that might push it down */
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Ensure video spans full width */
+            height: 100vh; /* Ensure video spans full height */
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        /*inside of the hero video*/
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .divider {
+            height: 3px; /* Thickness of the divider */
+            background-color: #000000; /* Color of the divider */
+            margin: 1rem 0; /* Spacing around the divider */
+            border: none;
+            width: 100; /* Full width */
+            border-radius: 5px;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .menu-section {
+            margin-bottom: 3rem;
+        }
+        
+        .menu-section-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+            border-bottom: 10px solid #ffcc00;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4b2c2d;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1.5px;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            color: #5c0404;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Button styles */
+        .btn {
+            background-color: #ff0000;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        /* footer button */
+        .btn-a {
+            background-color: #000000;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-a:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+
+        .btn:hover {
+            background-color: #ffcc00;
+            transform: scale(1.05);
+        }
+        
+        /*scrolling button style */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .menu-item {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .menu-item h3 {
+            color: #000000;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            padding: 0.75em;
+        }
+
+        .menu-item p {
+            color: #000000;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Price styles */
+        .menu-item .price {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background-color: #ffcc00;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 5rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: text-decoration 0.3s ease;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+ </style>
